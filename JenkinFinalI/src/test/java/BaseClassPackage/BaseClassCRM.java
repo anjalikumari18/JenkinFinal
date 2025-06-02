@@ -94,6 +94,8 @@ public class BaseClassCRM {
 			driver=new ChromeDriver();
 		}
 		
+		//removed tc
+		
 		sdriver=driver;//Both drivers are pointing towards same driver
 		//UtilityClassObject.setDriver(driver); //anyone want to use driver anywhere can access
 		
