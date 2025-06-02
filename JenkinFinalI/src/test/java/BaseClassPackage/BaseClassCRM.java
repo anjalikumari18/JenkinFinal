@@ -18,10 +18,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+//import com.aventstack.extentreports.ExtentReports;
+//import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+//import com.aventstack.extentreports.reporter.configuration.Theme;
 
 //import GenericUtility.PropertyFileUtiltiy;
 import ObjRepo.HomePage;
@@ -36,32 +36,32 @@ public class BaseClassCRM {
 	public WebDriver driver=null;
 	public static WebDriver sdriver= null;
 	public WebDriverUtility wutil=new WebDriverUtility();
-	public ExtentSparkReporter spark;
-	public ExtentTest test;
-	public ExtentReports report;
-	
+//	public ExtentSparkReporter spark;
+//	public ExtentTest test;
+//	public ExtentReports report;
+//	
 	
 	@BeforeSuite
 	public void configBS() {
 		Reporter.log("Establish DB connection", true);
 		//Spark report config
-		ExtentSparkReporter spark=new ExtentSparkReporter("./AdvanceReports/report.html");
-		spark.config().setDocumentTitle("CRM Test Suite Results");
-		spark.config().setReportName("CRM Report");
-		spark.config().setTheme(Theme.DARK);
+//		ExtentSparkReporter spark=new ExtentSparkReporter("./AdvanceReports/report.html");
+//		spark.config().setDocumentTitle("CRM Test Suite Results");
+//		spark.config().setReportName("CRM Report");
+//		spark.config().setTheme(Theme.DARK);
 		
 		//add environment info & create test
-		report = new ExtentReports();
-		report.attachReporter(spark);
-		report.setSystemInfo("OS", "Windows-10");
-		report.setSystemInfo("BROWSER", "CHROME");
+//		report = new ExtentReports();
+//		report.attachReporter(spark);
+//		report.setSystemInfo("OS", "Windows-10");
+//		report.setSystemInfo("BROWSER", "CHROME");
 
 	}
 	
 	@AfterSuite
 	public void configAS() {
 		Reporter.log("Disconnect DB connection", true);
-		report.flush();//to create backup
+		//report.flush();//to create backup
 	}
 	
 	@BeforeTest
@@ -95,7 +95,7 @@ public class BaseClassCRM {
 		}
 		
 		sdriver=driver;//Both drivers are pointing towards same driver
-		UtilityClassObject.setDriver(driver); //anyone want to use driver anywhere can access
+		//UtilityClassObject.setDriver(driver); //anyone want to use driver anywhere can access
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));

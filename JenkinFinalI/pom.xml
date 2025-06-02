@@ -23,12 +23,7 @@
     <artifactId>testng</artifactId>
     <version>7.11.0</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.1.2</version>
-</dependency>
+
 
  
   <dependency>
@@ -63,26 +58,5 @@
 		
 	</dependencies>
 
-  <profiles>
-	  <profile>
-		  <id>ST</id>
-	  </profile>
-  </profiles>
-  <build>
-	  <plugins>
-    
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.3</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-    
-</plugins>
-  </build>
  
 </project>
